@@ -1,0 +1,26 @@
+/**index.wxss**/
+.coverview{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150rpx;
+    background: #eee;
+    border-top: 1px solid #ccc;
+}
+.back {
+    position: absolute;
+    bottom: 200rpx;
+    left: 50rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+.center-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50rpx;
+    height: auto;
+    margin-top:-78rpx;
+    margin-left: -25rpx; 
+}

@@ -1,0 +1,6 @@
+<!--pages/pay/pay.wxml-->
+<view>
+  <button bindtap = 'pay'>支付</button>
+  <button bindtap = 'uploadFile'>上传</button>
+  <button catchtouchstart = 'recordingStart' catchtouchend='recordingEnd'>{{recordingMgs}}</button>
+</view>
