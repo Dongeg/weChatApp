@@ -1,0 +1,9 @@
+//app.js
+App({
+  appID:"wx50de9995527eedd7",
+  appSecret:"623bd33339c149b51dfc0b74e7769e3a",
+  accessToken:"",
+  code:"",
+  openID:"",
+  sessionKey:"" 
+})
