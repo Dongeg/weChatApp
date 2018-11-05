@@ -5,13 +5,14 @@ const app = getApp()
 
 Page({
   data: {
+    isShowTop:true,
     isShowMsg:true,
     markerId:'', // 当前点击的标记点id
     latitude:0,
     longitude:0,
     markers: [
       {
-        iconPath: "/images/loc.png",
+        iconPath: "/static/images/loc.png",
         id: 0,
         longitude:113.3282,
         latitude: 23.08451,
@@ -31,6 +32,12 @@ Page({
   // 页面加载执行
   onLoad: function () {
     this.getUserLocation();
+  },
+  //
+  toggle:function(e){
+    this.setData({
+      isShowTop:!this.data.isShowTop
+    })
   },
   // 页面跳转
   linkTo:function(){

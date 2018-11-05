@@ -1,14 +1,33 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/chat/chat",
     "pages/pay/pay",
     "pages/contact/contact",
-    "pages/chat/chat"
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#aeaeae",
+    "selectedColor": "#67ba62",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "客服"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
   }
 }

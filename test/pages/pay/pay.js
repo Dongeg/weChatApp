@@ -1,7 +1,7 @@
 // pages/pay/pay.js
 const app = getApp()
 const RecorderManager = wx.getRecorderManager()
-var util = require('../../utils/util.js');
+var util = require('../../static/js/common.js');
 Page({
 
   /**

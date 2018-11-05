@@ -44,7 +44,11 @@ function userLogin(){
     }
   })
 }
+function wxModel(e){
+  console.log(e)
+}
 module.exports = {
   getAccessToken,
   userLogin,
+  wxModel,
 }

@@ -12,12 +12,18 @@
        bindcallouttap="callouttap"
        show-location
        style="width: 100%;height: inherit;">
+    <cover-view class="index-top {{isShowTop?'topShow':'topHide'}}">
+        上面的什么鬼东西
+      <cover-view class="show-col-btn" bindtap="toggle">
+        按钮
+      </cover-view>
+    </cover-view>   
     <cover-view class="coverview"  hidden='{{isShowMsg}}'>
       当前维修点的id为:{{markerId}}
     </cover-view>
     <cover-view bindtap="linkTo">{{longitude}}</cover-view>
     <cover-view>{{latitude}}</cover-view>
-    <cover-image src='/images/marker.png' class='center-marker'></cover-image>
-    <cover-image src='/images/location.png' class="back" bindtap="back"></cover-image>
+    <cover-image src='/static/images/marker.png' class='center-marker'></cover-image>
+    <cover-image src='/static/images/location.png' class="back" bindtap="back"></cover-image>
   </map>
 </view>

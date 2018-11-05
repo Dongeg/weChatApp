@@ -1,6 +1,6 @@
 // pages/contact.js
 const app = getApp()
-var util = require('../../utils/util.js');
+var util = require('../../static/js/common.js');
 Page({
 
   /**

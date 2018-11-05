@@ -1,25 +1,13 @@
-// pages/chat/chat.js
-var util = require('../../static/js/common.js');
+// pages/user/user.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      inputValue:'',
-      chatRecord:[]
+
   },
-  send:function(){
-    var _chatRecord = this.data.chatRecord
-    _chatRecord.push(this.data.inputValue)
-    this.setData({
-      chatRecord: _chatRecord
-    })
-  },
-  wxModel:function(e){
-    var value = e.detail.value
-    this.data.inputValue = value
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

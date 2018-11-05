@@ -1,2 +1,12 @@
 <!--pages/chat/chat.wxml-->
-<text>pages/chat/chat.wxml</text>
+<view class='chat-main'>
+    <view class="chat-content" style="height: 80%">
+        <view wx:for="{{chatRecord}}" wx:key="item">
+            <text>{{item}}</text>
+        </view>
+    </view>
+    <view class="chat-input">
+        <input type='text' style="width: 70%" value="{{inputValue}}" bindblur="wxModel"/>
+        <button size="mini" type="primary" bindtap='send'>发送</button>
+    </view>
+</view>
