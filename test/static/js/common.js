@@ -1,6 +1,37 @@
 const app = getApp()
+// 封装数据请求
+function getData (obj) {
+  wx.request({
+    url: this.baseUrl + obj.url,
+    header: { "content-type": "json" },
+    method: 'GET',
+    data: obj.data,
+    success: function (res) {
+      obj.callback && obj.callback(res);
+    }
+  })
+}
+// 判断是否需要显示授权提示
+function isNeedShowAuthorization (that) {
+  console.log(that.data)
+  wx.getSetting({
+    success(res) {
+      if (res.authSetting['scope.userInfo']) {
 
+        // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+        that.setData({
+          showShouquan : true
+        })
 
+      }
+      else {
+        that.setData({
+          showShouquan: false
+        })
+      }
+    }
+  })
+}
 
 
 //获取小程序 access_token
@@ -44,11 +75,9 @@ function userLogin(){
     }
   })
 }
-function wxModel(e){
-  console.log(e)
-}
 module.exports = {
   getAccessToken,
   userLogin,
-  wxModel,
+  isNeedShowAuthorization,
+  getData
 }

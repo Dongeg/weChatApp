@@ -1,4 +1,4 @@
-// pages/user/user.js
+// pages/service/questionDetails/questionDetails.js
 Page({
 
   /**

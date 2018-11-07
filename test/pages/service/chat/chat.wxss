@@ -1,0 +1,56 @@
+.chat-main {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chat-content {
+  background: #eeeeee;
+  flex-grow: 1;
+  overflow: auto;
+}
+.chat-input {
+  width: 100%;
+  display: flex;
+}
+.chat-input input {
+  border: 1px solid #aaa;
+}
+.userHeader {
+  overflow: hidden;
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+.iSay {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cha-content {
+  margin-bottom: 50rpx;
+}
+.myContent {
+  margin-right: 20rpx;
+}
+.otherContent {
+  margin-left: 20rpx;
+}
+.chat-menu {
+  overflow: hidden;
+  height: 0;
+  transition: all 0.1s ease-out;
+}
+.show-menu {
+  height: 150rpx;
+}
+.hide-menu {
+  height: 0;
+}
+.chat-image {
+  width: 325rpx;
+  height: auto;
+}

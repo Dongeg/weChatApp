@@ -2,7 +2,7 @@
 
 //获取应用实例
 const app = getApp()
-
+var util = require('../../../static/js/common.js');
 Page({
   data: {
     isShowTop:true,
@@ -29,9 +29,22 @@ Page({
       },
     ]
   },
+  // 跳转到搜索页
+  toSearchPage:function(){
+    wx.navigateTo({
+      url: '../search/search'
+    })
+  },
   // 页面加载执行
   onLoad: function () {
     this.getUserLocation();
+  },
+  onReady:function(){
+
+  },
+  updated:function(){
+
+
   },
   //
   toggle:function(e){
@@ -57,20 +70,6 @@ Page({
     let mpCtx = wx.createMapContext("map");
     mpCtx.moveToLocation();
   },
-  // getLoc:function(){
-  //   var that = this
-  //   wx.chooseLocation({
-  //     success:function(res){
-  //       var latitude = res.latitude
-  //       var longitude = res.longitude
-  //       that.setData({
-  //         latitude: latitude,//纬度 
-  //         longitude: longitude,//经度  
-  //       })
-  //     }
-  //   })
-  // },
-
   // 获取用户经纬度
   getUserLocation: function () {
     var that = this
@@ -82,6 +81,10 @@ Page({
           latitude: latitude,//纬度 
           longitude: longitude,//经度  
         })
+        wx.nextTick(function(){
+          let mpCtx = wx.createMapContext("map");
+          mpCtx.moveToLocation();
+        }) 
       }
     })
   },
@@ -105,7 +108,6 @@ Page({
       }
     })
   },
-
   // 点击气泡触发
   callouttap:function(e){
     var that = this;

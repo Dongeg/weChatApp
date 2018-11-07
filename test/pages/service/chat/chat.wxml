@@ -1,0 +1,43 @@
+<!--pages/chat/chat.wxml-->
+<view class='chat-main'>
+    <view hidden='{{showShouquan}}'>
+       <getUserMsg bind:hideSq="hideSq"></getUserMsg>
+    </view>
+    
+    <view class="chat-content">
+        <view wx:for="{{chatRecord}}" wx:key="item">
+            <view wx:if="{{item.type==1}}" class='iSay cha-content'>
+              <text class='myContent'>{{item.content}}</text>
+              <view class="userHeader">
+                <open-data type="userAvatarUrl"></open-data>
+              </view>
+            </view>
+            <view wx:elif="{{item.type==2}}" class='iSay cha-content'>
+              <view>
+                 <image class='chat-image'  src='{{item.content}}' mode="widthFix" ></image>
+              </view>
+              <view class="userHeader">
+                <open-data type="userAvatarUrl"></open-data>
+              </view>
+            </view>
+
+            <view wx:else class='otherSay cha-content'>
+              <open-data type="userAvatarUrl" class="userHeader"></open-data>
+              <text class='otherContent'>{{item.content}}</text>
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="chat-input">
+            <view>
+              <input type='text' style="width: 100%" value="{{inputValue}}" bindblur="wxModel"/>
+            </view>
+
+            <button size="mini" type="primary" bindtap='send'>发送</button>
+            <view bindtap='toggleMenu'>加</view>
+        </view>
+        <view class="chat-menu {{isShowInputMenu?'show-menu':'hide-menu'}}">
+           <view bindtap='chooseImg'>选择图片</view>
+        </view>
+    </view>
+</view>

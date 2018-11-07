@@ -1,0 +1,4 @@
+<!--components/getUserInfo/getUserInfo.wxml-->
+<view class='getUserInfoComponents'>
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='getUserInfoBtn'>授权登录</button>
+</view>

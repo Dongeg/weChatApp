@@ -1,0 +1,8 @@
+<!--pages/user/user.wxml-->
+<view>
+    <view hidden='{{showShouquan}}'>
+       <getUserMsg bind:hideSq="hideSq"></getUserMsg>
+    </view>
+   <text>我的</text>
+</view>
+

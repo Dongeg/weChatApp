@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../../../static/wxss/common";
 .coverview{
   position: absolute;
   bottom: 0;
@@ -30,7 +31,12 @@
   left: 0;
   width: 100%;
   height: 300rpx;
+  transition:all 0.35s ease-out 0.2s;
+}
+.index-top-content {
   background: #cccccc;
+  height: 220rpx;
+
 }
 .show-col-btn {
   position: absolute;
@@ -38,7 +44,6 @@
   left: 50%;
   transform: translate(-50%,0);
   width: 80rpx;
-  transition:all 0.35s ease-out 0.2s;
 }
 .topShow {
   top: 0rpx;
@@ -46,4 +51,11 @@
 
 .topHide {
   top: -200rpx;
+}
+.toSearch-btn {
+  background: #eeeeee;
+  color: @gray1;
+  font-size: 18px;
+  text-align: center;
+  padding: 10px;
 }

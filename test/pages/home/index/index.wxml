@@ -10,19 +10,27 @@
        bindmarkertap="markertap" 
        bindregionchange="regionchange"
        bindcallouttap="callouttap"
+       bindupdated = "updated"
        show-location
        style="width: 100%;height: inherit;">
-    <cover-view class="index-top {{isShowTop?'topShow':'topHide'}}">
-        上面的什么鬼东西
+
+    <cover-view class="index-top {{isShowTop?'topShow':'topHide'}}" style='display:none'>
+      <cover-view class="index-top-content">上面的什么鬼东西</cover-view>
       <cover-view class="show-col-btn" bindtap="toggle">
-        按钮
+        <button class="btn">按钮</button>
       </cover-view>
-    </cover-view>   
+    </cover-view> 
+
+
+    <!-- 搜索框 -->
+    <cover-view class='toSearch-btn'>
+        <cover-view catchtap='toSearchPage'>搜索附近的门店</cover-view>
+    </cover-view>
+
+
     <cover-view class="coverview"  hidden='{{isShowMsg}}'>
       当前维修点的id为:{{markerId}}
     </cover-view>
-    <cover-view bindtap="linkTo">{{longitude}}</cover-view>
-    <cover-view>{{latitude}}</cover-view>
     <cover-image src='/static/images/marker.png' class='center-marker'></cover-image>
     <cover-image src='/static/images/location.png' class="back" bindtap="back"></cover-image>
   </map>

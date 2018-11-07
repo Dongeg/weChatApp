@@ -1,0 +1,6 @@
+<!--pages/shopDetails/shopDetails.wxml-->
+<view>
+  <view>门店详情</view>
+  <button bindtap='navigation'>导航</button>
+  <image src='/static/images/cover.jpg' bindtap='showBig'></image>
+</view>

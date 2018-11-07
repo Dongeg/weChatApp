@@ -1,10 +1,13 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/chat/chat",
-    "pages/pay/pay",
-    "pages/contact/contact",
-    "pages/user/user"
+    "pages/home/index/index",
+    "pages/home/search/search",
+    "pages/service/serviceIndex/serviceIndex",
+    "pages/service/chat/chat",
+    "pages/user/userIndex/userIndex",
+    "pages/common/shopDetails/shopDetails",
+    "pages/common/order/order",
+    "pages/service/questionDetails/questionDetails"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,15 +20,15 @@
     "selectedColor": "#67ba62",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/index/index",
         "text": "首页"
       },
       {
-        "pagePath": "pages/chat/chat",
+        "pagePath": "pages/service/serviceIndex/serviceIndex",
         "text": "客服"
       },
       {
-        "pagePath": "pages/user/user",
+        "pagePath": "pages/user/userIndex/userIndex",
         "text": "我的"
       }
     ]

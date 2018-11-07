@@ -1,32 +1,50 @@
-// pages/chat/chat.js
-var util = require('../../static/js/common.js');
+// pages/contact.js
+const app = getApp()
+var util = require('../../../static/js/common.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      inputValue:'',
-      chatRecord:[]
+    showShouquan: true,
   },
-  send:function(){
-    var _chatRecord = this.data.chatRecord
-    _chatRecord.push(this.data.inputValue)
-    this.setData({
-      chatRecord: _chatRecord
-    })
-  },
-  wxModel:function(e){
-    var value = e.detail.value
-    this.data.inputValue = value
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
+  hideSq: function (e) {
+    this.setData({
+      showShouquan: true,
+    })
+  },
+  //拨打电话
+  call:function(){
+    wx.makePhoneCall({
+      phoneNumber: '13060634596',
+      success:function(res){
+        console.log(res)
+      },
+      fail:function(res){
 
+      }
+    })
+  },
+  //跳转到在线客服
+  goToChat:function(){
+    wx.navigateTo({
+      url: '../chat/chat',
+    })
+  },
+  // 跳转到问题详情页
+  toQueDetail:function(){
+    wx.navigateTo({
+      url: '../questionDetails/questionDetails',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -38,7 +56,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    util.isNeedShowAuthorization(this)
   },
 
   /**

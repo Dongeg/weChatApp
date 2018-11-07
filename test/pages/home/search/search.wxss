@@ -1,0 +1,25 @@
+.search-input-ctn {
+  display: flex;
+  justify-content: space-between;
+}
+.search-input-main {
+  display: flex;
+  flex-grow: 1;
+}
+.search-input-main input {
+  flex-grow: 1;
+  border: 1px solid #eeeeee;
+}
+.search-btn {
+  width: 80rpx;
+}
+.shop-section {
+  display: flex;
+}
+.shop-cover image {
+  width: 150rpx;
+  height: 150rpx;
+}
+.toDetails {
+  display: flex;
+}

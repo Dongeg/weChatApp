@@ -1,0 +1,25 @@
+<!--pages/contact.wxml-->
+<view>
+    <view hidden='{{showShouquan}}'>
+       <getUserMsg bind:hideSq="hideSq"></getUserMsg>
+    </view>
+    <view class='question-list'>
+        <view class='question-item' bindtap='toQueDetail'>
+            <text>孩子咳嗽老不好，多半是废了</text> <text>></text>
+        </view>
+        <view class='question-item' bindtap='toQueDetail'>
+            <text>孩子咳嗽老不好，多半是废了</text> <text>></text>
+        </view>
+        <view class='question-item' bindtap='toQueDetail'>
+            <text>孩子咳嗽老不好，多半是废了</text> <text>></text>
+        </view>
+    </view>
+    <view class='person-service-ctn'>
+        <view class='online-service' bindtap='goToChat'>
+            在线客服
+        </view>
+        <view class='phone-service' bindtap='call'>
+            电话客服
+        </view>
+    </view>
+</view>

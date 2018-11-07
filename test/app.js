@@ -5,5 +5,15 @@ App({
   accessToken:"",
   code:"",
   openID:"",
-  sessionKey:"" 
+  sessionKey:"" ,
+  userInfo:{
+    avatarUrl:"https://wx.qlogo.cn/mmopen/vi_32/YBWr6vCc8vQBg5oerCHicPeVbQqYIpa1OeFd1rN3t1FsAhPnj1vpUL2l8h2iaceuVHibVkSN6qYqMxUZCibGiaia6k1g/132",
+    city:"Guangzhou",
+    country:"China",
+    gender:1,
+    language:"zh_CN",
+    nickName:"酱の三",
+    province:"Guangdong",
+  },
+  isNeedAuthorization:true, // 是否需要授权
 })
