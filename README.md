@@ -50,3 +50,17 @@ $ wxss ./path
 
 亲测可用
 
+### input双向绑定
+
+```html
+<input type='text' style="width: 100%" value="{{inputValue}}" bindinput="wxModel"/>
+```
+
+```js
+  wxModel:function(e){
+    this.setData({
+      key: e.detail.value
+    })
+  },
+
+```
