@@ -1,0 +1,37 @@
+view {
+  box-sizing: border-box;
+}
+.question-list {
+  margin-top: 26rpx;
+  padding: 0 90rpx;
+  background: #fff;
+}
+.question-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+.question-item image {
+  width: 18rpx;
+  height: 40rpx;
+}
+.person-service-ctn {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.service-item {
+  width: 323rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 16rpx;
+}
+.service-item .time {
+  font-size: 28rpx;
+}

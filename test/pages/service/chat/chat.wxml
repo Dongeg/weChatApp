@@ -3,24 +3,36 @@
     <view hidden='{{showShouquan}}'>
        <getUserMsg bind:hideSq="hideSq"></getUserMsg>
     </view>
-    
-    <view class="chat-content">
+    <!-- 聊天对话展示区 -->
+    <view class="chat-content" bindtap='hideMenu'>
         <view wx:for="{{chatRecord}}" wx:key="item">
+            <!-- 我方文字 -->
             <view wx:if="{{item.type==1}}" class='iSay cha-content'>
               <text class='myContent'>{{item.content}}</text>
               <view class="userHeader">
                 <open-data type="userAvatarUrl"></open-data>
               </view>
             </view>
-            <view wx:elif="{{item.type==2}}" class='iSay cha-content'>
-              <view>
-                 <image class='chat-image'  src='{{item.content}}' mode="widthFix" ></image>
+            <!-- 我方图片 -->
+            <view wx:elif="{{item.type==2}}" class='iSay iSayImage  cha-content'>
+              <view class='image-ctn'>
+                 <image class='chat-image'  src='{{item.content}}' mode="widthFix" catchtap='showBig'></image>
+              </view>
+              <view class="userHeader">
+                <open-data type="userAvatarUrl"></open-data>
+              </view>
+            </view>
+            <!-- 我方语音 -->
+            <view wx:elif="{{item.type==3}}" class='iSay iSayVoice  cha-content'>
+              <view class='image-ctn'>
+                 语音
               </view>
               <view class="userHeader">
                 <open-data type="userAvatarUrl"></open-data>
               </view>
             </view>
 
+            <!-- 对方文字 -->
             <view wx:else class='otherSay cha-content'>
               <open-data type="userAvatarUrl" class="userHeader"></open-data>
               <text class='otherContent'>{{item.content}}</text>
@@ -29,15 +41,37 @@
     </view>
     <view>
         <view class="chat-input">
-            <view>
-              <input type='text' style="width: 100%" value="{{inputValue}}" bindblur="wxModel"/>
+            <!-- 切换输入方式 -->
+            <view class='voice-ctn'>
+                <image src='/static/images/voice.png' bindtap='toggleVoice' hidden='{{chatType==2}}'></image>
+                <image src='/static/images/input.png' bindtap='toggleInput' hidden='{{chatType==1}}'></image>
             </view>
-
-            <button size="mini" type="primary" bindtap='send'>发送</button>
-            <view bindtap='toggleMenu'>加</view>
+            <!-- 输入方式 -->
+            <view class="in-ctn">
+              <view wx:if='{{chatType==2}}' 
+                    class='voice-btn' 
+                    catchtouchstart = 'recordingStart' 
+                    catchtouchend='recordingEnd' 
+                    >{{recordingMgs}}</view>
+              <input wx:else='{{chatType==1}}' type='text' value="{{inputValue}}" bindinput="wxModel" bindconfirm="send" confirm-type="发送"  />
+            </view>
+            <!-- 加号 -->
+            <view bindtap='showMenu' class='toggleMenu-btn'>
+                <image src='/static/images/add.png'></image>
+            </view>
+            <!-- 发送按钮 -->
+            <view>
+            <button size="mini" type="primary" bindtap='send' class='send-btn' style=' padding: 0 0.5em;'>发送</button>
+            </view>
         </view>
+        <!-- 菜单 -->
         <view class="chat-menu {{isShowInputMenu?'show-menu':'hide-menu'}}">
-           <view bindtap='chooseImg'>选择图片</view>
+           <view class='menu-item' bindtap='chooseImg'>
+              <view class="menu-item-icon">
+                <image src='/static/images/photo.png'></image>
+              </view>
+              <view>选择图片</view>
+           </view>
         </view>
     </view>
 </view>

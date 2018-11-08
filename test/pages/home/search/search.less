@@ -1,26 +1,77 @@
+@import "../../../static/wxss/common";
+page {
+  background: @white;
+}
 .search-input-ctn {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  height: 86rpx;
+  padding: 17rpx 26rpx;
+  background: @gray1;
 }
 .search-input-main {
   display: flex;
   flex-grow: 1;
+  margin: 0 20rpx;
+  background: @white;
+  line-height: 54rpx;
+  border-radius: 16rpx;
   input {
     flex-grow: 1;
-    border: 1px solid #eeeeee;
+  }
+  icon {
+    margin: 0 10rpx;
   }
 }
 .search-btn {
   width: 80rpx;
+  line-height: 54rpx;
+  color: @white;
 }
 .shop-section {
+  position: relative;
+  box-sizing: border-box;
+  padding: 23rpx 38rpx;
+  border-bottom:1px solid @gray3;
+}
+.shop-section-title {
+  font-size: @fontTitle1;
+  padding-bottom: 20rpx;
+}
+.shop-section-main {
+  font-size: @fontTitle4;
   display: flex;
+  .address {
+    width: 500rpx;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+  }
 }
 .shop-cover {
+  padding-right: 52rpx;
   image {
-    width: 150rpx;
-    height: 150rpx;
+    width: 124rpx;
+    height: 124rpx;
   }
+}
+.shop-order {
+  position: absolute;
+  top: 23rpx;
+  right: 38rpx;
+  width: 120rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  text-align: center;
+  border-radius: 12rpx;
+  background: red;
+  color: @white;
+}
+.shop-msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .toDetails {
   display: flex;

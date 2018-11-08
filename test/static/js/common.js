@@ -9,15 +9,14 @@ function getData (obj) {
     success: function (res) {
       obj.callback && obj.callback(res);
     }
-  })
-}
+  }) 
+} 
 // 判断是否需要显示授权提示
 function isNeedShowAuthorization (that) {
   console.log(that.data)
   wx.getSetting({
     success(res) {
       if (res.authSetting['scope.userInfo']) {
-
         // 已经授权，可以直接调用 getUserInfo 获取头像昵称
         that.setData({
           showShouquan : true

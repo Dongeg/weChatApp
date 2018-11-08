@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/home/index/index",
-    "pages/home/search/search",
-    "pages/service/serviceIndex/serviceIndex",
     "pages/service/chat/chat",
+    "pages/service/serviceIndex/serviceIndex",
+    "pages/home/search/search",
+    "pages/home/index/index",
+    
+ 
     "pages/user/userIndex/userIndex",
     "pages/common/shopDetails/shopDetails",
     "pages/common/order/order",

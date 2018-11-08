@@ -13,18 +13,17 @@
        bindupdated = "updated"
        show-location
        style="width: 100%;height: inherit;">
-
-    <cover-view class="index-top {{isShowTop?'topShow':'topHide'}}" style='display:none'>
+    <cover-view class="index-top {{isShowTop?'topShow':'topHide'}}">
       <cover-view class="index-top-content">上面的什么鬼东西</cover-view>
       <cover-view class="show-col-btn" bindtap="toggle">
-        <button class="btn">按钮</button>
+        <cover-image src='/static/images/open.png'></cover-image>
       </cover-view>
     </cover-view> 
 
 
     <!-- 搜索框 -->
-    <cover-view class='toSearch-btn'>
-        <cover-view catchtap='toSearchPage'>搜索附近的门店</cover-view>
+    <cover-view class='toSearch-btn' catchtap='toSearchPage'>
+        附近门店
     </cover-view>
 
 

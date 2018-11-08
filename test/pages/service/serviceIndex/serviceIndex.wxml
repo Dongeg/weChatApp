@@ -5,21 +5,26 @@
     </view>
     <view class='question-list'>
         <view class='question-item' bindtap='toQueDetail'>
-            <text>孩子咳嗽老不好，多半是废了</text> <text>></text>
+            <text>孩子咳嗽老不好，多半是废了</text>
+            <image src='/static/images/goto.png'></image>
         </view>
         <view class='question-item' bindtap='toQueDetail'>
-            <text>孩子咳嗽老不好，多半是废了</text> <text>></text>
+            <text>孩子咳嗽老不好，多半是废了</text>
+            <image src='/static/images/goto.png'></image>
         </view>
         <view class='question-item' bindtap='toQueDetail'>
-            <text>孩子咳嗽老不好，多半是废了</text> <text>></text>
+            <text>孩子咳嗽老不好，多半是废了</text>
+            <image src='/static/images/goto.png'></image>
         </view>
     </view>
     <view class='person-service-ctn'>
-        <view class='online-service' bindtap='goToChat'>
-            在线客服
+        <view class='online-service service-item' bindtap='goToChat'>
+            <view>在线客服</view> 
+            <view class='time'>8:00-23:00</view>
         </view>
-        <view class='phone-service' bindtap='call'>
-            电话客服
+        <view class='phone-service service-item' bindtap='call'>
+            <view>电话客服</view> 
+            <view class='time'> 8:00-23:00</view>
         </view>
     </view>
 </view>

@@ -19,9 +19,9 @@ Page({
         width: 30,
         height: 30,
         callout: {
-          content: " 语言：珊珊是不是傻 \n 预计到达时间：10分钟 \n 车牌号：12345",
+          content: " xxx汽修店 \n 距离：300m 评分：4.1  剩余容量：3 \n 地址：谢谢谢谢谢谢为",
           padding: 10,
-          display: 'ALWAYS',
+          // display: 'ALWAYS',
           textAlign: 'left',
           borderRadius:5,
         }
@@ -112,10 +112,16 @@ Page({
   callouttap:function(e){
     var that = this;
     console.log(e.markerId);
-    that.setData({
-      markerId: e.markerId,
-      isShowMsg: false,
+    // 跳转到店铺详情
+    wx.navigateTo({
+      url: '../../common/shopDetails/shopDetails',
     })
+
+
+    // that.setData({
+    //   markerId: e.markerId,
+    //   isShowMsg: false,
+    // })
   },
   // 点击地图触发
   clickMap: function(){

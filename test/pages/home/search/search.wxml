@@ -2,34 +2,39 @@
 <view>
     <view class='search-input-ctn'>
       <view class='search-input-main'>
-        <icon type='search'></icon>
-        <input type='text' 
+        <view>
+        <icon type='search' size='16px'></icon>
+        </view>
+        
+        <input type='text'
+               placeholder='附近门店'
                bindinput = 'getKey' 
                bindfocus='searchFocus' 
                bindblur='searchBlur'
                bindconfirm='searchReal'
                value="{{key}}"
          />
-        <icon type='clear' hidden='{{!isSearchFocus}}' bindtap='inputClear' ></icon>
+        <view>
+          <icon type='clear' hidden='{{!isSearchFocus}}' bindtap='inputClear' size='16px'></icon>
+        </view>
       </view>
       <view class='search-btn' bindtap='searchBtnClick' >取消</view>
     </view>
-    <view>附近的门店</view>
-    <!-- 搜索结果列表 -->
+
     <view>
       <view class='shop-section'>
-        <view class='toDetails' bindtap='goToDetails'>
-          <view class='shop-cover'>
-            <image src='../../../static/images/cover.jpg'></image>
+        <view class='shop-section-title'>xxx汽修店</view>
+        <view class='shop-order' bindtap='goToOrder'>预约</view>
+        <view class='shop-section-main'>
+          <view class='toDetails' bindtap='goToDetails'>
+            <view class='shop-cover'>
+              <image src='../../../static/images/cover.jpg'></image>
+            </view>
+            <view class='shop-msg'>
+              <view class='address'>地址：说的是多极化世界大会上的讲话</view>
+              <view class='store'>距离：666m 评分：8.88</view>
+            </view>
           </view>
-          <view class='shop-msg'>
-            <view>xxx汽修店</view>
-            <view>地址：说的是多极化世界大会上的讲话</view>
-            <view>距离：666m 评分：8.88</view>
-          </view>
-        </view>
-        <view class='shop-order' bindtap='goToOrder'>
-            预约
         </view>
       </view>
     </view>

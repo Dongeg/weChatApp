@@ -34,28 +34,46 @@
   transition:all 0.35s ease-out 0.2s;
 }
 .index-top-content {
-  background: #cccccc;
+  background:@gray1;
   height: 220rpx;
 
 }
 .show-col-btn {
   position: absolute;
-  bottom: 0;
+  bottom:-1;
   left: 50%;
   transform: translate(-50%,0);
-  width: 80rpx;
+  width: 200rpx;
+  height: 20rpx;
+  background: @gray1;
+  color: @white;
+  text-align: center;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+  cover-image {
+    width: 26rpx;
+    height: 12rpx;
+    margin: 0 87rpx;
+  }
 }
 .topShow {
   top: 0rpx;
 }
 
 .topHide {
-  top: -200rpx;
+  top: -220rpx;
 }
 .toSearch-btn {
-  background: #eeeeee;
+  position: absolute;
+  left: 50%;
+  bottom: 20rpx;
+  transform: translate(-50%,0);
+  background:@white;
   color: @gray1;
-  font-size: 18px;
+  font-size: @fontTitle3;
   text-align: center;
-  padding: 10px;
+  width: 320rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 16rpx;
 }
