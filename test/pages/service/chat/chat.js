@@ -1,12 +1,15 @@
 // pages/chat/chat.js
 const app = getApp()
 var util = require('../../../static/js/common.js');
+var RecorderManager = wx.getRecorderManager();   // 录音管理
+var InnerAudioContext = wx.createInnerAudioContext();  // 音频播放上下文
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+      voiceList:{},  // 聊天语音列表
       recordingMgs:'按住讲话',
       chatType:1,   // 1为文字  2为语音
       showShouquan:true,
@@ -25,16 +28,31 @@ Page({
   onLoad: function (options) {
     
   },
+  // 播放语音
+  playVoice:function(e){
+    console.log(e.currentTarget.dataset)
+    var key = e.currentTarget.dataset.key;
+    var _voiceList = this.data.voiceList;
+    var playTarget = _voiceList[key];
+    InnerAudioContext.src = playTarget;
+    InnerAudioContext.onPlay(() => {
+      console.log('开始播放')
+    })
+    InnerAudioContext.onError((res) => {
+      console.log(res.errMsg)
+      console.log(res.errCode)
+    })
+  },
   //录音
   recordingStart: function () {
-    console.log(111)
     RecorderManager.start()
     this.setData({
       recordingMgs: '正在录音'
     })
   },
+  //结束录音
   recordingEnd: function () {
-    console.log(22)
+    var that = this
     RecorderManager.stop()
     this.setData({
       recordingMgs: '按住讲话'
@@ -42,6 +60,26 @@ Page({
     // 获取录音
     RecorderManager.onStop(function (res) {
       console.log(res)
+     
+      var _voiceList = that.data.voiceList
+      var _chatRecord = that.data.chatRecord
+
+          // todo 把录音上传到服务器，回调回来的音频地址才能播放
+
+
+
+
+      _voiceList[res.duration] = res.tempFilePath
+      var _data = {
+        type: 3,
+        key: res.duration
+      }
+      _chatRecord.push(_data)
+      that.setData({
+        voiceList:_voiceList,
+        chatRecord: _chatRecord,
+        inputValue: '',
+      })
     })
   },
   // 隐藏授权组件

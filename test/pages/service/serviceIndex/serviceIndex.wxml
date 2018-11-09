@@ -3,16 +3,16 @@
     <view hidden='{{showShouquan}}'>
        <getUserMsg bind:hideSq="hideSq"></getUserMsg>
     </view>
-    <view class='question-list'>
-        <view class='question-item' bindtap='toQueDetail'>
+    <view class='link-menu-list'>
+        <view class='link-menu-item' bindtap='toQueDetail'>
             <text>孩子咳嗽老不好，多半是废了</text>
             <image src='/static/images/goto.png'></image>
         </view>
-        <view class='question-item' bindtap='toQueDetail'>
+        <view class='link-menu-item' bindtap='toQueDetail'>
             <text>孩子咳嗽老不好，多半是废了</text>
             <image src='/static/images/goto.png'></image>
         </view>
-        <view class='question-item' bindtap='toQueDetail'>
+        <view class='link-menu-item' bindtap='toQueDetail'>
             <text>孩子咳嗽老不好，多半是废了</text>
             <image src='/static/images/goto.png'></image>
         </view>

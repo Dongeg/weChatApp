@@ -1,6 +1,61 @@
 <!--pages/shopDetails/shopDetails.wxml-->
-<view>
-  <view>门店详情</view>
-  <button bindtap='navigation'>导航</button>
-  <image src='/static/images/cover.jpg' bindtap='showBig'></image>
+<view class='shop-details'>
+  <view class='shop-details-cover'>
+    <image src='/static/images/cover.jpg'></image>
+    <view class='attention'>关注</view>
+    <view class='open-time'>营业时间 08：00-23：00</view> 
+  </view>
+  <view class='shop-details-msg'>
+    <view class='shop-details-msg-left'>
+        <view>马化腾汽修店</view>
+        <view>广州海珠区新港中路琶洲腾讯众创空间102号</view>
+        <view>总评分：4.85</view>
+    </view>
+    <view class='shop-details-msg-right'>
+        <view class='dh' bindtap='navigation'>
+            <view>
+              <image src='/static/images/dh.png'></image>
+            </view>
+            <text>导航</text> 
+        </view>
+        <view class='order' bindtap='goToOrder'>
+          预约
+        </view>
+    </view>
+  </view>
+  <view class='comment'>
+    <view class='comment-title'>
+      <view>用户评价</view>
+      <view>共809个评价></view> 
+    </view>
+    <view class='comment-list'>
+        <view class='comment-item'>
+            <view class='comment-item-title'>
+              <view class='comment-item-title-left'>
+                <view class='comment-item-header'>
+                  <image src='/static/images/cover.jpg'></image>
+                </view>
+                <view>
+                  <view>135****6702</view>
+                  <view>5.0</view>
+                </view>
+              </view>
+              <view class='comment-item-time'>
+                 2018.11.05
+              </view>
+            </view>
+
+            <view class='comment-item-text'>
+                100字内评价，很负责任，特别耐心的检测车子状况。
+                做四轮定位的时候特别细心的用一根铁棍撬了一下车底部和左前轮，做四轮定位用时间很多很细心...
+            </view>
+            <view class='comment-item-images'>
+                <image src='/static/images/cover.jpg'></image>
+                <image src='/static/images/cover.jpg'></image>
+                <image src='/static/images/cover.jpg'></image>
+                <image src='/static/images/cover.jpg'></image>
+            </view>
+        </view>
+    </view>
+  </view>
 </view>

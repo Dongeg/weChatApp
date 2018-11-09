@@ -1,6 +1,4 @@
-// pages/shopDetails/shopDetails.js
-const app = getApp()
-var util = require('../../../static/js/common.js');
+// pages/user/tank/tank.js
 Page({
 
   /**
@@ -9,31 +7,7 @@ Page({
   data: {
 
   },
-  //跳转到预约页面 
-  goToOrder:function(){
-    wx.navigateTo({
-      url: '../order/order',
-    })
-  },
-  /**
-   * 导航
-   * 
-  */
-  navigation:function(){
-    wx.openLocation({
-      latitude: 23.362490,
-      longitude: 116.715790,
-      scale: 18,
-      name: '华乾大厦',
-      address: '金平区长平路93号'
-    })
-  },
-  // 显示大图
-  showBig:function(){
-    wx.previewImage({
-      urls: ['/static/images/cover.jpg'] // 需要预览的图片http链接列表
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

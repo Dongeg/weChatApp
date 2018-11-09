@@ -24,8 +24,8 @@
             </view>
             <!-- 我方语音 -->
             <view wx:elif="{{item.type==3}}" class='iSay iSayVoice  cha-content'>
-              <view class='image-ctn'>
-                 语音
+              <view class='voiceMsg-ctn myContent' data-key='{{item.key}}' bindtap='playVoice' >
+                 <image src='/static/images/voice-left.png'></image>
               </view>
               <view class="userHeader">
                 <open-data type="userAvatarUrl"></open-data>

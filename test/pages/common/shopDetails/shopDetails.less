@@ -1,13 +1,11 @@
-view {
-  box-sizing: border-box;
-}
+@import "../../../static/wxss/common";
 .shop-details-cover {
   position: relative;
   height: 300rpx;
   overflow: hidden;
-}
-.shop-details-cover image {
-  width: 100%;
+  image {
+    width: 100%;
+  }
 }
 .attention {
   position: absolute;
@@ -28,23 +26,37 @@ view {
 .shop-details-msg-right {
   width: 200rpx;
   text-align: center;
+  .dh {
+    text-align: center;
+    image {
+      width: 60rpx;
+      height: 60rpx;
+    }
+  }
 }
-.shop-details-msg-right .dh {
-  text-align: center;
-}
-.shop-details-msg-right .dh image {
-  width: 60rpx;
-  height: 60rpx;
+.comment {
+
 }
 .comment-title {
   display: flex;
   justify-content: space-between;
 }
+.comment-list {
+
+}
+.comment-item {
+
+}
 .comment-item-title {
   display: flex;
   justify-content: space-between;
 }
-.comment-item-header image {
-  width: 60rpx;
-  height: 60rpx;
+.comment-item-header {
+  image {
+    width: 60rpx;
+    height: 60rpx;
+  }
+}
+.comment-item-title-left {
+
 }

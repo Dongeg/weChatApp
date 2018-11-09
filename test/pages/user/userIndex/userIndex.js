@@ -16,6 +16,35 @@ Page({
   onLoad: function (options) {
     
   },
+  // 链接跳转
+  goto:function(e){
+    console.log(e)
+    debugger
+    var type = e.currentTarget.dataset.type;
+    var link = '';
+    switch (type){
+      case '1':
+        link = '../reservation/reservation';
+        break;
+      case '2':
+        link = '../order/order';
+        break;
+      case '3':
+        link = '../garage/garage';
+        break;
+      case '4':
+        link = '../coupon/coupon';
+        break;
+      case '5':
+        link = '../tank/tank';
+        break;
+    }
+    wx.navigateTo({
+      url: link,
+    })
+  },
+
+  // 隐藏授权组件
   hideSq: function (e) {
     this.setData({
       showShouquan: true,
@@ -27,7 +56,7 @@ Page({
   onReady: function () {
 
   },
-
+  
   /**
    * 生命周期函数--监听页面显示
    */

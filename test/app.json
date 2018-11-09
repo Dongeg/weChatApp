@@ -1,15 +1,20 @@
 {
   "pages": [
+    "pages/user/userIndex/userIndex",
+    "pages/home/index/index",
+    "pages/common/shopDetails/shopDetails",
     "pages/service/chat/chat",
     "pages/service/serviceIndex/serviceIndex",
+    "pages/service/questionDetails/questionDetails",
     "pages/home/search/search",
-    "pages/home/index/index",
-    
- 
-    "pages/user/userIndex/userIndex",
-    "pages/common/shopDetails/shopDetails",
-    "pages/common/order/order",
-    "pages/service/questionDetails/questionDetails"
+
+    "pages/user/garage/garage",
+    "pages/user/reservation/reservation",
+    "pages/user/tank/tank",
+    "pages/common/user/order",
+    "pages/user/carAddSp1/carAddSp1",
+    "pages/user/carAddSp2/carAddSp2",
+    "pages/user/carAddSp3/carAddSp3"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -21,7 +21,6 @@ function isNeedShowAuthorization (that) {
         that.setData({
           showShouquan : true
         })
-
       }
       else {
         that.setData({

@@ -3,6 +3,37 @@
     <view hidden='{{showShouquan}}'>
        <getUserMsg bind:hideSq="hideSq"></getUserMsg>
     </view>
-   <text>我的</text>
+    <!-- 头像信息等 -->
+    <view class='user-msg'>
+      <view class='user-approve'>未认证</view>
+      <view class="user-header">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class='user-name'>王思聪</view>
+      <view class='user-car'>劳斯莱斯 幻影</view>
+      <view class='user-sign-btn'>签到</view>
+    </view>
+    <view class='link-menu-list'>
+        <view class='link-menu-item' bindtap='toQueDetail' bindtap='goto' data-type='1'>
+            <text>我的预约</text>
+            <image src='/static/images/goto.png'></image>
+        </view> 
+        <view class='link-menu-item' bindtap='toQueDetail' bindtap='goto' data-type='1'>
+            <text>我的订单</text>
+            <image src='/static/images/goto.png'></image>
+        </view> 
+        <view class='link-menu-item' bindtap='toQueDetail' bindtap='goto' data-type='1'>
+            <text>我的车库</text>
+            <image src='/static/images/goto.png'></image>
+        </view>
+        <view class='link-menu-item' bindtap='toQueDetail' bindtap='goto' data-type='1'>
+            <text>我的优惠券</text>
+            <image src='/static/images/goto.png'></image>
+        </view>
+        <view class='link-menu-item' bindtap='toQueDetail' bindtap='goto' data-type='1'>
+            <text>油箱</text>
+            <image src='/static/images/goto.png'></image>
+        </view>
+    </view>
 </view>
 
