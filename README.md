@@ -64,3 +64,88 @@ $ wxss ./path
   },
 
 ```
+
+
+### 父子组件传值
+
+
+父组件wxml
+```html
+
+<star number="123" bind:getStore='getStore' ></star>
+```
+父组件js
+
+```js
+  // 获取评分
+  getStore:function(e){
+    console.log(e.detail)
+  },
+```
+
+
+
+子组件wxml
+
+```html
+<!--星星评价组件-->
+<view class='star-list'>
+    <view class='star-item' wx:for="{{star}}" wx:key="{{item}}" bindtap='doStar' data-index='{{index}}'>
+      <image src='/static/images/star.png' hidden="{{item=='1'}}"></image>
+      <image src='/static/images/star-active.png' hidden="{{item=='0'}}"></image>
+    </view>
+</view>
+
+```
+
+子组件js
+```js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    num: {            // 属性名
+      type: Number,     // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
+      value: ''     // 属性初始值（可选），如果未指定则会根据类型选择一个
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    star:[1,1,1,1,1]
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    // 调用父组件传过来的值
+    getParentData:function(){
+      console.log(this.data.num)
+    },
+    
+    doStar:function(e){
+      var store = e.currentTarget.dataset.index;
+      var _star = [];
+      for (var i=0;i<5;i++){
+        if (i<=store){
+          _star.push(1)
+        }
+        else{
+          _star.push(0)
+        }
+      }
+      this.setData({
+        star:_star
+      })
+      // 向父组件传值
+      this.triggerEvent('getStore', store+1)
+    }
+  }
+})
+
+
+```
