@@ -72,7 +72,7 @@ $ wxss ./path
 父组件wxml
 ```html
 
-<star number="123" bind:getStore='getStore' ></star>
+<star num="123" bind:getStore='getStore' ></star>
 ```
 父组件js
 
