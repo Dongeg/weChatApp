@@ -59,7 +59,7 @@ $ wxss ./path
 ```js
   wxModel:function(e){
     this.setData({
-      key: e.detail.value
+      inputValue: e.detail.value
     })
   },
 
