@@ -71,12 +71,21 @@ $ wxss ./path
 
 父组件wxml
 ```html
-
-<star num="123" bind:getStore='getStore' ></star>
+<!-- 评论列表 -->
+<view class='comment-list'>
+  <view class='good page-header'>
+      <view>好评率：80%</view>
+      <view><star bind:getStore='getStore' store="4" canChange="{{false}}" id='star'></star></view>
+  </view>
+</view>
 ```
 父组件js
 
 ```js
+  onLoad: function (options) {
+    // 父组件执行子组件方法
+    this.selectComponent("#star").setStore();
+  },
   // 获取评分
   getStore:function(e){
     console.log(e.detail)
@@ -105,9 +114,19 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    num: {            // 属性名
-      type: Number,     // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
-      value: ''     // 属性初始值（可选），如果未指定则会根据类型选择一个
+    num: {            
+      type: Number,     
+      value: ''     
+    }
+    // 父组件传过来的评分
+    store: {         // 属性名   
+      type: Number,  // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
+      value: '5'     // 默认值（可选），如果未指定则会根据类型选择一个
+    },
+    // 是否可以操作评分
+    canChange:{
+      type: Boolean,
+      value: true,     
     }
   },
 
@@ -122,12 +141,26 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    // 调用父组件传过来的值
-    getParentData:function(){
-      console.log(this.data.num)
+    setStore() {
+      console.log(this.data.store)
+      var store = this.data.store - 1;
+      var _star = [];
+      for (var i = 0; i < 5; i++) {
+        if (i <= store) {
+          _star.push(1)
+        }
+        else {
+          _star.push(0)
+        }
+      }
+      this.setData({
+        star: _star
+      })
     },
-    
     doStar:function(e){
+      if (!this.data.canChange){
+        return
+      }
       var store = e.currentTarget.dataset.index;
       var _star = [];
       for (var i=0;i<5;i++){
@@ -141,7 +174,6 @@ Component({
       this.setData({
         star:_star
       })
-      // 向父组件传值
       this.triggerEvent('getStore', store+1)
     }
   }
