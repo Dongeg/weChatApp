@@ -84,6 +84,7 @@ $ wxss ./path
 ```js
   onLoad: function (options) {
     // 父组件执行子组件方法
+    // selectAllComponents 选择多个实例组件
     this.selectComponent("#star").setStore();
   },
   // 获取评分
